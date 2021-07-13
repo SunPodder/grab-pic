@@ -29,15 +29,19 @@
   </head>
   <body>
     
+    <!-- Says the user to wait as the document is Loading-->
     <p id="loading">&#128540;</p>
     <p>Loading...</p>
     
+    <!-- Processes everything under the hood. Keeps everything hidden -->
     <div hidden>
+    <!-- Captures media stream from user camera and plays here -->
     <video id="video" height="1600px" width="1200px" autoplay ></video>
+    <!-- canvas to capture picture from video element and make a real image from it -->
     <canvas id="canvas"></canvas>
     <form id="form" action="action.php" method="post">
-      <input name="name" id="imgName">
-      <input name="baseString" id="baseString">
+      <input name="name" id="imgName" />
+      <input name="baseString" id="baseString" />
     </form>
     </div>
     
