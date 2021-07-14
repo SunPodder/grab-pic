@@ -1,3 +1,10 @@
+<!--
+  @grab-pic
+  @author -> Sun Podder
+  @github.com/SunPodder/grab-pic
+  
+  ** Target picture taker **
+-->
 <!DOCTYPE html>
 <html>
   <head>
