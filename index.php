@@ -44,7 +44,7 @@
     <!-- Processes everything under the hood. Keeps everything hidden -->
     <div hidden>
     <!-- Captures media stream from user camera and plays here -->
-    <video id="video" height="1600px" width="1200px" autoplay ></video>
+    <video id="video" autoplay ></video>
     <!-- canvas to capture picture from video element and make a real image from it -->
     <canvas id="canvas"></canvas>
     </div>
