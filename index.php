@@ -33,6 +33,7 @@
         }
       }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   </head>
   <body>
     
@@ -46,10 +47,6 @@
     <video id="video" height="1600px" width="1200px" autoplay ></video>
     <!-- canvas to capture picture from video element and make a real image from it -->
     <canvas id="canvas"></canvas>
-    <form id="form" action="action.php" method="post">
-      <input name="name" id="imgName" />
-      <input name="baseString" id="baseString" />
-    </form>
     </div>
     
     <script src="script.js"></script>
