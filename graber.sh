@@ -25,16 +25,16 @@ banner(){
 throwNgrok(){
   printf "Ngrok isn't installed. Please install it first, from \e[0m\e[1;93mhttps://ngrok.com"
 }
-mkdir uploads
-clear
-banner
-printf "\n \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Please turn on device hotspot, otherwise you won't get the link. \n\n"
 
 command -v php > /dev/null 2>&1 || installPhp
 killall -2 php > /dev/null 2>&1
 killall -2 ngrok > /dev/null 2>&1
 
 sleep 1
+
+clear
+banner
+printf "\n \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Please turn on device hotspot, otherwise you won't get the link. \n\n"
 
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m Starting php local server on port 1234..."
 { php -S 127.0.0.1:1234 -t ./ > /dev/null 2>&1 & } || installPhp
