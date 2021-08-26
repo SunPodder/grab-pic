@@ -8,7 +8,8 @@ Clone this repo:<br>
 <code>git clone https://github.com/SunPodder/grab-pic</code><br><br>
 
 Change Directory:<br>
-<code>cd grab-pic</code><br><br>
+<code>cd grab-pic</code><br>
+```mkdir uploads```<br><br>
 
 Give execution permission:<br>
 <code>chmod +x graber.sh</code><br><br>
