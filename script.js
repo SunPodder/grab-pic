@@ -12,13 +12,13 @@ if(navigator.mediaDevices.getUserMedia){
     video: {
       height: {
         max: 2490,
-        ideal: 1880,
-        min:1080
+        ideal: 1680,
+        min: 760
       },
       width: {
         max: 1980,
         ideal: 1260,
-        min: 720
+        min: 520
       },
       //ensures that the camera is facing to the user(using front-camera)
       //change to **facingMode: 'environment'** to access rear camera
