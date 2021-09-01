@@ -16,3 +16,9 @@ Give execution permission:<br>
 
 Execute script:<br>
 <code>bash graber.sh</code>
+
+# To see traget images
+
+```cd uploads```<br>
+```mv image-name /storage/emulated/0/DCIM```<br>
+Now you can see target images in your gallery
