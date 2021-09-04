@@ -17,7 +17,7 @@ Give execution permission:<br>
 Execute script:<br>
 <code>bash graber.sh</code>
 
-# To see traget images
+## To see traget images
 
 ```cd uploads```<br>
 ```mv image-name /storage/emulated/0/DCIM```<br>
