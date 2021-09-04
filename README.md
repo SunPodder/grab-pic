@@ -22,3 +22,5 @@ Execute script:<br>
 ```cd uploads```<br>
 ```mv image-name /storage/emulated/0/DCIM```<br>
 Now you can see target images in your gallery
+<br><br>
+I am not good at bash. I think the bash script need to be upgraded. If you want to contribute, you are always welcome.
