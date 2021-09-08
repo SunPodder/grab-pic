@@ -1,5 +1,5 @@
 # grab-pic
-Get targets picture using Javascript and save them to your PHP server.
+Get targets pictures using Javascript and PHP.
 <br><br>
 
 Open <b>Terminal</b><br>
