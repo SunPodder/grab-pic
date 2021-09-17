@@ -20,6 +20,9 @@ Execute script:<br>
 ## To see traget images
 
 ```cd uploads```<br>
+```ls```<br>
+Now you will see the available image names. Copy the image name and type:
+
 ```mv image-name /storage/emulated/0/DCIM```<br>
 Now you can see target images in your gallery
 <br><br>
